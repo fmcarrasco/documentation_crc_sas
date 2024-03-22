@@ -1,0 +1,2638 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 1: Distribucion lluvia diaria &mdash; documentación de Documentación - </title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/nbsphinx-code-cells.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=653e5397"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../../../_static/translations.js?v=efdbd0b9"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../../genindex/" />
+    <link rel="search" title="Búsqueda" href="../../../search/" />
+    <link rel="next" title="Ejercicio 2: Distribucion Tmedia diaria" href="../Tutorial_PDF_CDF_temperatura_daily/" />
+    <link rel="prev" title="¿Como trabajar con multiples archivos en línea usando python?" href="../Tutorial_online_lista_archivos/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../" class="icon icon-home">
+            Documentación
+              <img src="../../../_static/crc_sas_logo.jpg" class="logo" alt="Logotipo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contenido:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../">SISSA Database</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../1Informacion_general/">Información general</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2Estructura_de_datos/">Estructura de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../3Formato_de_datos/">Formato de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4Acceso_a_los_datos/">Acceso a los datos</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../5Tutoriales/">Tutoriales</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../5Tutoriales_python/">Tutoriales python</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial_descarga_datos_python/">¿Como descargar datos desde la base usando python?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial_online_plot/">¿Como trabajar con el archivo en línea?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial_online_lista_archivos/">¿Como trabajar con multiples archivos en línea usando python?</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Ejercicio 1: Distribucion lluvia diaria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial_PDF_CDF_temperatura_daily/">Ejercicio 2: Distribucion Tmedia diaria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial_temperatura_weekly/">Ejercicio 3: distribucion Tmedia semanal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial_PDF_boxplot_climatologia_diaria/">Ejercicio 4: Climatologia Tmedia</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial_verificacion/">Ejercicio 5: Verificacion de pronosticos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial_pronostico_semana2/">Pronostico probabilistico para lluvia acumulada semanal.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial_pronostico_tmin/">Pronostico probabilistico para temperatura minima.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial_pronostico_dias_tmax/">Pronostico probabilistico para temperatura maxima.</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5Tutoriales_R/">Tutoriales R</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../weather_generator/">Weather Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web_service_python/">Web Service python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web_service_r/">Web Service R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Preguntas_frecuentes/">Preguntas frecuentes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Novedades/">Novedades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Suscripcion_a_novedades/">Suscripción a novedades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Contacto/">Contacto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../English_version/">English version</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../">Documentación</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../">SISSA Database</a></li>
+          <li class="breadcrumb-item"><a href="../../5Tutoriales/">Tutoriales</a></li>
+          <li class="breadcrumb-item"><a href="../../5Tutoriales_python/">Tutoriales python</a></li>
+      <li class="breadcrumb-item active">Ejercicio 1: Distribucion lluvia diaria</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/SISSA_database/tutoriales_python/Tutorial_PDF_CDF_rain_daily.ipynb.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Nota</p>
+<div class="line-block">
+<div class="line">Para descargar la notebook, acceder al siguiente <a class="reference external" href="https://github.com/fmcarrasco/documentation_crc_sas/tree/master/source/SISSA_database/tutoriales_python/Tutorial_PDF_CDF_rain_daily.ipynb">link</a></div>
+</div>
+</div>
+<section id="Ejercicio-1:-Distribucion-lluvia-diaria">
+<h1>Ejercicio 1: Distribucion lluvia diaria<a class="headerlink" href="#Ejercicio-1:-Distribucion-lluvia-diaria" title="Enlace permanente a este encabezado"></a></h1>
+<section id="Analizamos-cómo-el-modelo-representa-aspectos-de-la-distribución-de-una-variable">
+<h2>Analizamos cómo el modelo representa aspectos de la distribución de una variable<a class="headerlink" href="#Analizamos-cómo-el-modelo-representa-aspectos-de-la-distribución-de-una-variable" title="Enlace permanente a este encabezado"></a></h2>
+<p>En este tutorial vamos a explorar como es la distribución de probabilidades en el modelo para un punto:</p>
+<ul class="simple">
+<li><p>Vamos a seleccionar un punto</p></li>
+<li><p>Tomar datos diarios correspondiende a la semana 2</p></li>
+<li><p>Calcular la función de distribución de probabilidad y la función de distribución de probabilidad acumulada</p></li>
+</ul>
+<p>En este caso vamos a trabajar con la variable precipitación</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Partimos importando los modulos a utilizar:
+%matplotlib inline
+import xarray as xr
+import s3fs
+import netCDF4
+import numpy as np
+import pandas as pd
+import datetime
+from datetime import timedelta
+import os
+import sys
+import glob
+import datetime
+import matplotlib.pyplot as plt
+<br/></pre></div>
+</div>
+</div>
+<p>Primero definimos algunas funciones que vamos a usar</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># funcion para acomodar xarrays antes de concatenarlos
+def preprocess_ds(ds):
+    ds = ds.assign_coords(S= ds.time.values[0], M = ds.M.values)
+    ds[&#39;time&#39;] = ds.time.values - ds.time.values[0]
+    ds = ds.rename({&#39;time&#39;: &#39;leadtime&#39;})
+    return ds
+
+# funcion para calcular la CDF de los datos
+def calcular_cdf(datos):
+    n = len(datos)
+    x_ordenados = np.sort(datos)
+    cdf = np.arange(1, n + 1) / n
+    return x_ordenados, cdf
+
+# función para obtener el segundo dato de cada grupo
+def get_second_data(group):
+    return group.isel(S=1)
+</pre></div>
+</div>
+</div>
+<p>Vamos a estudiar la distribucion para un punto, con la variable lluvia para las fechas alrededor del día 5/2/2018.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>variable = &#39;rain&#39;
+lat = -29.18
+lon = -58.07
+os.system(&#39;mkdir -p ./tmp&#39;)
+ref_date = datetime.datetime.strptime(&#39;20180502&#39;, &quot;%Y%m%d&quot;)
+</pre></div>
+</div>
+</div>
+<p>Vamos a descargar de la base de datos de sissa los datos corregidos. Vamos a ver como se programa para seleccionar todas las fechas alrededor del 2 de mayo de cada año del período 2010-2019. <strong>Observación: si quieren trabajar en otro dominio para la misma variable, van a tener que nombrar a los archivos distinto o guardarlos en otra carpeta, no en tmp</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># DATOS CORREGIDOS
+fs = s3fs.S3FileSystem(anon=True)
+BUCKET_NAME = &#39;sissa-forecast-database&#39;
+tforecast = &#39;subseasonal&#39;
+modelo = &#39;GEFSv12_corr&#39;
+list_df = []
+for i in np.arange(2010, 2020, 1): #loop sobre años
+    loop_date = ref_date.replace(year=i) - timedelta(days=15) # reemplazo el año y arranco 15 días antes de la fecha
+    while loop_date &lt; (ref_date.replace(year=i) + timedelta(days=15)): # el loop es hasta 15 días despues
+        if loop_date.weekday() == 2: # los pronos están disponibles los miercoles
+            PATH = tforecast + &#39;/&#39; + modelo + &#39;/&#39; + variable + &#39;/&#39; + loop_date.strftime(&#39;%Y&#39;) + &#39;/&#39; + loop_date.strftime(&#39;%Y%m%d&#39;) + &#39;/&#39;
+            # Listamos todos los archivos dentro del bucket + PATH
+            awsfiles = fs.ls(&#39;s3://&#39; + BUCKET_NAME + &#39;/&#39; + PATH)
+            df_m = []
+            for ii, awsfile in enumerate(awsfiles):
+                if not os.path.isfile(&#39;./tmp/corr_&#39; + variable + &#39;_&#39; + loop_date.strftime(&#39;%Y%m%d&#39;) + &#39;_&#39; + str(ii) + &#39;.nc4&#39;):
+                    print(&#39;Extrayendo datos del archivo:&#39;)
+                    print(awsfile)
+                    with fs.open(awsfile) as f:
+                        gefs = xr.open_dataset(f)
+                        gefs = gefs.sel(lat=lat, lon=lon, method=&#39;nearest&#39;)
+                        gefs = gefs.assign_coords(M= ii)
+                        ds = gefs[variable]
+                        ds.to_netcdf(&#39;./tmp/corr_&#39; + variable + &#39;_&#39; + loop_date.strftime(&#39;%Y%m%d&#39;) + &#39;_&#39; + str(ii) + &#39;.nc4&#39;)
+                        f.close()
+        loop_date += timedelta(days=1)
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100421/rain_20100421_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100421/rain_20100421_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100421/rain_20100421_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100421/rain_20100421_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100421/rain_20100421_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100421/rain_20100421_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100421/rain_20100421_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100421/rain_20100421_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100421/rain_20100421_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100421/rain_20100421_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100421/rain_20100421_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100428/rain_20100428_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100428/rain_20100428_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100428/rain_20100428_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100428/rain_20100428_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100428/rain_20100428_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100428/rain_20100428_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100428/rain_20100428_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100428/rain_20100428_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100428/rain_20100428_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100428/rain_20100428_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100428/rain_20100428_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100505/rain_20100505_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100505/rain_20100505_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100505/rain_20100505_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100505/rain_20100505_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100505/rain_20100505_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100505/rain_20100505_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100505/rain_20100505_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100505/rain_20100505_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100505/rain_20100505_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100505/rain_20100505_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100505/rain_20100505_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100512/rain_20100512_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100512/rain_20100512_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100512/rain_20100512_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100512/rain_20100512_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100512/rain_20100512_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100512/rain_20100512_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100512/rain_20100512_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100512/rain_20100512_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100512/rain_20100512_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100512/rain_20100512_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2010/20100512/rain_20100512_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110420/rain_20110420_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110420/rain_20110420_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110420/rain_20110420_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110420/rain_20110420_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110420/rain_20110420_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110420/rain_20110420_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110420/rain_20110420_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110420/rain_20110420_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110420/rain_20110420_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110420/rain_20110420_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110420/rain_20110420_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110427/rain_20110427_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110427/rain_20110427_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110427/rain_20110427_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110427/rain_20110427_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110427/rain_20110427_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110427/rain_20110427_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110427/rain_20110427_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110427/rain_20110427_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110427/rain_20110427_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110427/rain_20110427_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110427/rain_20110427_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110504/rain_20110504_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110504/rain_20110504_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110504/rain_20110504_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110504/rain_20110504_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110504/rain_20110504_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110504/rain_20110504_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110504/rain_20110504_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110504/rain_20110504_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110504/rain_20110504_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110504/rain_20110504_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110504/rain_20110504_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110511/rain_20110511_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110511/rain_20110511_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110511/rain_20110511_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110511/rain_20110511_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110511/rain_20110511_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110511/rain_20110511_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110511/rain_20110511_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110511/rain_20110511_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110511/rain_20110511_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110511/rain_20110511_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2011/20110511/rain_20110511_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120418/rain_20120418_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120418/rain_20120418_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120418/rain_20120418_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120418/rain_20120418_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120418/rain_20120418_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120418/rain_20120418_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120418/rain_20120418_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120418/rain_20120418_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120418/rain_20120418_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120418/rain_20120418_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120418/rain_20120418_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120425/rain_20120425_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120425/rain_20120425_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120425/rain_20120425_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120425/rain_20120425_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120425/rain_20120425_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120425/rain_20120425_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120425/rain_20120425_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120425/rain_20120425_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120425/rain_20120425_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120425/rain_20120425_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120425/rain_20120425_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120502/rain_20120502_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120502/rain_20120502_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120502/rain_20120502_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120502/rain_20120502_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120502/rain_20120502_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120502/rain_20120502_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120502/rain_20120502_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120502/rain_20120502_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120502/rain_20120502_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120502/rain_20120502_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120502/rain_20120502_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120509/rain_20120509_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120509/rain_20120509_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120509/rain_20120509_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120509/rain_20120509_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120509/rain_20120509_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120509/rain_20120509_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120509/rain_20120509_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120509/rain_20120509_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120509/rain_20120509_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120509/rain_20120509_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120509/rain_20120509_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120516/rain_20120516_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120516/rain_20120516_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120516/rain_20120516_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120516/rain_20120516_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120516/rain_20120516_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120516/rain_20120516_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120516/rain_20120516_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120516/rain_20120516_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120516/rain_20120516_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120516/rain_20120516_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2012/20120516/rain_20120516_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130417/rain_20130417_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130417/rain_20130417_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130417/rain_20130417_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130417/rain_20130417_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130417/rain_20130417_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130417/rain_20130417_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130417/rain_20130417_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130417/rain_20130417_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130417/rain_20130417_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130417/rain_20130417_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130417/rain_20130417_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130424/rain_20130424_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130424/rain_20130424_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130424/rain_20130424_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130424/rain_20130424_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130424/rain_20130424_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130424/rain_20130424_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130424/rain_20130424_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130424/rain_20130424_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130424/rain_20130424_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130424/rain_20130424_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130424/rain_20130424_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130501/rain_20130501_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130501/rain_20130501_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130501/rain_20130501_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130501/rain_20130501_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130501/rain_20130501_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130501/rain_20130501_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130501/rain_20130501_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130501/rain_20130501_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130501/rain_20130501_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130501/rain_20130501_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130501/rain_20130501_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130508/rain_20130508_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130508/rain_20130508_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130508/rain_20130508_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130508/rain_20130508_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130508/rain_20130508_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130508/rain_20130508_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130508/rain_20130508_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130508/rain_20130508_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130508/rain_20130508_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130508/rain_20130508_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130508/rain_20130508_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130515/rain_20130515_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130515/rain_20130515_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130515/rain_20130515_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130515/rain_20130515_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130515/rain_20130515_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130515/rain_20130515_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130515/rain_20130515_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130515/rain_20130515_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130515/rain_20130515_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130515/rain_20130515_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2013/20130515/rain_20130515_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140423/rain_20140423_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140423/rain_20140423_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140423/rain_20140423_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140423/rain_20140423_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140423/rain_20140423_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140423/rain_20140423_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140423/rain_20140423_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140423/rain_20140423_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140423/rain_20140423_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140423/rain_20140423_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140423/rain_20140423_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140430/rain_20140430_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140430/rain_20140430_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140430/rain_20140430_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140430/rain_20140430_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140430/rain_20140430_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140430/rain_20140430_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140430/rain_20140430_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140430/rain_20140430_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140430/rain_20140430_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140430/rain_20140430_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140430/rain_20140430_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140507/rain_20140507_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140507/rain_20140507_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140507/rain_20140507_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140507/rain_20140507_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140507/rain_20140507_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140507/rain_20140507_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140507/rain_20140507_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140507/rain_20140507_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140507/rain_20140507_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140507/rain_20140507_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140507/rain_20140507_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140514/rain_20140514_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140514/rain_20140514_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140514/rain_20140514_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140514/rain_20140514_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140514/rain_20140514_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140514/rain_20140514_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140514/rain_20140514_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140514/rain_20140514_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140514/rain_20140514_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140514/rain_20140514_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2014/20140514/rain_20140514_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150422/rain_20150422_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150422/rain_20150422_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150422/rain_20150422_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150422/rain_20150422_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150422/rain_20150422_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150422/rain_20150422_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150422/rain_20150422_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150422/rain_20150422_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150422/rain_20150422_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150422/rain_20150422_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150422/rain_20150422_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150429/rain_20150429_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150429/rain_20150429_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150429/rain_20150429_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150429/rain_20150429_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150429/rain_20150429_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150429/rain_20150429_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150429/rain_20150429_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150429/rain_20150429_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150429/rain_20150429_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150429/rain_20150429_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150429/rain_20150429_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150506/rain_20150506_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150506/rain_20150506_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150506/rain_20150506_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150506/rain_20150506_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150506/rain_20150506_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150506/rain_20150506_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150506/rain_20150506_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150506/rain_20150506_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150506/rain_20150506_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150506/rain_20150506_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150506/rain_20150506_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150513/rain_20150513_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150513/rain_20150513_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150513/rain_20150513_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150513/rain_20150513_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150513/rain_20150513_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150513/rain_20150513_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150513/rain_20150513_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150513/rain_20150513_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150513/rain_20150513_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150513/rain_20150513_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2015/20150513/rain_20150513_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160420/rain_20160420_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160420/rain_20160420_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160420/rain_20160420_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160420/rain_20160420_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160420/rain_20160420_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160420/rain_20160420_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160420/rain_20160420_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160420/rain_20160420_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160420/rain_20160420_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160420/rain_20160420_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160420/rain_20160420_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160427/rain_20160427_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160427/rain_20160427_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160427/rain_20160427_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160427/rain_20160427_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160427/rain_20160427_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160427/rain_20160427_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160427/rain_20160427_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160427/rain_20160427_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160427/rain_20160427_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160427/rain_20160427_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160427/rain_20160427_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160504/rain_20160504_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160504/rain_20160504_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160504/rain_20160504_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160504/rain_20160504_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160504/rain_20160504_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160504/rain_20160504_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160504/rain_20160504_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160504/rain_20160504_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160504/rain_20160504_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160504/rain_20160504_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160504/rain_20160504_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160511/rain_20160511_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160511/rain_20160511_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160511/rain_20160511_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160511/rain_20160511_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160511/rain_20160511_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160511/rain_20160511_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160511/rain_20160511_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160511/rain_20160511_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160511/rain_20160511_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160511/rain_20160511_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2016/20160511/rain_20160511_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170419/rain_20170419_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170419/rain_20170419_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170419/rain_20170419_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170419/rain_20170419_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170419/rain_20170419_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170419/rain_20170419_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170419/rain_20170419_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170419/rain_20170419_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170419/rain_20170419_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170419/rain_20170419_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170419/rain_20170419_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170426/rain_20170426_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170426/rain_20170426_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170426/rain_20170426_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170426/rain_20170426_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170426/rain_20170426_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170426/rain_20170426_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170426/rain_20170426_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170426/rain_20170426_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170426/rain_20170426_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170426/rain_20170426_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170426/rain_20170426_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170503/rain_20170503_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170503/rain_20170503_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170503/rain_20170503_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170503/rain_20170503_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170503/rain_20170503_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170503/rain_20170503_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170503/rain_20170503_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170503/rain_20170503_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170503/rain_20170503_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170503/rain_20170503_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170503/rain_20170503_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170510/rain_20170510_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170510/rain_20170510_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170510/rain_20170510_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170510/rain_20170510_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170510/rain_20170510_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170510/rain_20170510_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170510/rain_20170510_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170510/rain_20170510_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170510/rain_20170510_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170510/rain_20170510_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2017/20170510/rain_20170510_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180418/rain_20180418_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180418/rain_20180418_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180418/rain_20180418_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180418/rain_20180418_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180418/rain_20180418_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180418/rain_20180418_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180418/rain_20180418_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180418/rain_20180418_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180418/rain_20180418_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180418/rain_20180418_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180418/rain_20180418_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180425/rain_20180425_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180425/rain_20180425_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180425/rain_20180425_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180425/rain_20180425_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180425/rain_20180425_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180425/rain_20180425_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180425/rain_20180425_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180425/rain_20180425_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180425/rain_20180425_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180425/rain_20180425_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180425/rain_20180425_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180502/rain_20180502_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180502/rain_20180502_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180502/rain_20180502_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180502/rain_20180502_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180502/rain_20180502_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180502/rain_20180502_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180502/rain_20180502_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180502/rain_20180502_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180502/rain_20180502_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180502/rain_20180502_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180502/rain_20180502_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180509/rain_20180509_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180509/rain_20180509_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180509/rain_20180509_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180509/rain_20180509_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180509/rain_20180509_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180509/rain_20180509_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180509/rain_20180509_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180509/rain_20180509_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180509/rain_20180509_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180509/rain_20180509_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180509/rain_20180509_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180516/rain_20180516_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180516/rain_20180516_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180516/rain_20180516_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180516/rain_20180516_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180516/rain_20180516_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180516/rain_20180516_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180516/rain_20180516_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180516/rain_20180516_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180516/rain_20180516_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180516/rain_20180516_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2018/20180516/rain_20180516_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190417/rain_20190417_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190417/rain_20190417_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190417/rain_20190417_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190417/rain_20190417_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190417/rain_20190417_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190417/rain_20190417_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190417/rain_20190417_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190417/rain_20190417_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190417/rain_20190417_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190417/rain_20190417_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190417/rain_20190417_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190424/rain_20190424_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190424/rain_20190424_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190424/rain_20190424_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190424/rain_20190424_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190424/rain_20190424_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190424/rain_20190424_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190424/rain_20190424_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190424/rain_20190424_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190424/rain_20190424_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190424/rain_20190424_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190424/rain_20190424_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190501/rain_20190501_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190501/rain_20190501_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190501/rain_20190501_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190501/rain_20190501_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190501/rain_20190501_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190501/rain_20190501_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190501/rain_20190501_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190501/rain_20190501_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190501/rain_20190501_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190501/rain_20190501_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190501/rain_20190501_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190508/rain_20190508_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190508/rain_20190508_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190508/rain_20190508_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190508/rain_20190508_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190508/rain_20190508_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190508/rain_20190508_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190508/rain_20190508_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190508/rain_20190508_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190508/rain_20190508_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190508/rain_20190508_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190508/rain_20190508_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190515/rain_20190515_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190515/rain_20190515_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190515/rain_20190515_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190515/rain_20190515_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190515/rain_20190515_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190515/rain_20190515_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190515/rain_20190515_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190515/rain_20190515_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190515/rain_20190515_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190515/rain_20190515_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12_corr/rain/2019/20190515/rain_20190515_p10.nc
+</pre></div></div>
+</div>
+<p>Repetimos para los datos sin corregir</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># DATOS SIN CORREGIR
+fs = s3fs.S3FileSystem(anon=True)
+BUCKET_NAME = &#39;sissa-forecast-database&#39;
+tforecast = &#39;subseasonal&#39;
+modelo = &#39;GEFSv12&#39;
+list_df = []
+for i in np.arange(2010, 2020, 1):
+    loop_date = ref_date.replace(year=i) - timedelta(days=15)
+    while loop_date &lt; (ref_date.replace(year=i) + timedelta(days=15)):
+        if loop_date.weekday() == 2:
+            PATH = tforecast + &#39;/&#39; + modelo + &#39;/&#39; + variable + &#39;/&#39; + loop_date.strftime(&#39;%Y&#39;) + &#39;/&#39; + loop_date.strftime(&#39;%Y%m%d&#39;) + &#39;/&#39;
+            # Listamos todos los archivos dentro del bucket + PATH
+            awsfiles = fs.ls(&#39;s3://&#39; + BUCKET_NAME + &#39;/&#39; + PATH)
+            df_m = []
+            for ii, awsfile in enumerate(awsfiles):
+                if not os.path.isfile(&#39;./tmp/uncal_&#39; + variable + &#39;_&#39; + loop_date.strftime(&#39;%Y%m%d&#39;) + &#39;_&#39; + str(ii) + &#39;.nc4&#39;):
+                    print(&#39;Extrayendo datos del archivo:&#39;)
+                    print(awsfile)
+                    with fs.open(awsfile) as f:
+                        gefs = xr.open_dataset(f)
+                        gefs = gefs.sel(lat=lat, lon=lon, method=&#39;nearest&#39;)
+                        gefs = gefs.assign_coords(M= ii)
+                        ds = gefs[variable]
+                        ds.to_netcdf(&#39;./tmp/uncal_&#39; + variable + &#39;_&#39; + loop_date.strftime(&#39;%Y%m%d&#39;) + &#39;_&#39; + str(ii) + &#39;.nc4&#39;)
+                        f.close()
+        loop_date += timedelta(days=1)
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100421/rain_20100421_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100421/rain_20100421_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100421/rain_20100421_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100421/rain_20100421_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100421/rain_20100421_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100421/rain_20100421_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100421/rain_20100421_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100421/rain_20100421_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100421/rain_20100421_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100421/rain_20100421_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100421/rain_20100421_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100428/rain_20100428_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100428/rain_20100428_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100428/rain_20100428_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100428/rain_20100428_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100428/rain_20100428_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100428/rain_20100428_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100428/rain_20100428_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100428/rain_20100428_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100428/rain_20100428_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100428/rain_20100428_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100428/rain_20100428_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100505/rain_20100505_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100505/rain_20100505_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100505/rain_20100505_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100505/rain_20100505_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100505/rain_20100505_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100505/rain_20100505_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100505/rain_20100505_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100505/rain_20100505_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100505/rain_20100505_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100505/rain_20100505_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100505/rain_20100505_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100512/rain_20100512_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100512/rain_20100512_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100512/rain_20100512_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100512/rain_20100512_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100512/rain_20100512_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100512/rain_20100512_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100512/rain_20100512_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100512/rain_20100512_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100512/rain_20100512_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100512/rain_20100512_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2010/20100512/rain_20100512_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110420/rain_20110420_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110420/rain_20110420_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110420/rain_20110420_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110420/rain_20110420_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110420/rain_20110420_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110420/rain_20110420_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110420/rain_20110420_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110420/rain_20110420_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110420/rain_20110420_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110420/rain_20110420_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110420/rain_20110420_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110427/rain_20110427_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110427/rain_20110427_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110427/rain_20110427_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110427/rain_20110427_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110427/rain_20110427_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110427/rain_20110427_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110427/rain_20110427_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110427/rain_20110427_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110427/rain_20110427_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110427/rain_20110427_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110427/rain_20110427_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110504/rain_20110504_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110504/rain_20110504_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110504/rain_20110504_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110504/rain_20110504_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110504/rain_20110504_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110504/rain_20110504_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110504/rain_20110504_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110504/rain_20110504_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110504/rain_20110504_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110504/rain_20110504_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110504/rain_20110504_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110511/rain_20110511_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110511/rain_20110511_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110511/rain_20110511_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110511/rain_20110511_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110511/rain_20110511_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110511/rain_20110511_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110511/rain_20110511_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110511/rain_20110511_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110511/rain_20110511_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110511/rain_20110511_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2011/20110511/rain_20110511_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120418/rain_20120418_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120418/rain_20120418_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120418/rain_20120418_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120418/rain_20120418_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120418/rain_20120418_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120418/rain_20120418_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120418/rain_20120418_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120418/rain_20120418_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120418/rain_20120418_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120418/rain_20120418_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120418/rain_20120418_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120425/rain_20120425_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120425/rain_20120425_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120425/rain_20120425_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120425/rain_20120425_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120425/rain_20120425_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120425/rain_20120425_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120425/rain_20120425_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120425/rain_20120425_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120425/rain_20120425_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120425/rain_20120425_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120425/rain_20120425_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120502/rain_20120502_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120502/rain_20120502_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120502/rain_20120502_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120502/rain_20120502_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120502/rain_20120502_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120502/rain_20120502_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120502/rain_20120502_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120502/rain_20120502_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120502/rain_20120502_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120502/rain_20120502_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120502/rain_20120502_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120509/rain_20120509_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120509/rain_20120509_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120509/rain_20120509_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120509/rain_20120509_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120509/rain_20120509_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120509/rain_20120509_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120509/rain_20120509_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120509/rain_20120509_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120509/rain_20120509_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120509/rain_20120509_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120509/rain_20120509_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120516/rain_20120516_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120516/rain_20120516_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120516/rain_20120516_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120516/rain_20120516_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120516/rain_20120516_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120516/rain_20120516_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120516/rain_20120516_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120516/rain_20120516_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120516/rain_20120516_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120516/rain_20120516_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2012/20120516/rain_20120516_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130417/rain_20130417_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130417/rain_20130417_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130417/rain_20130417_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130417/rain_20130417_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130417/rain_20130417_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130417/rain_20130417_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130417/rain_20130417_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130417/rain_20130417_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130417/rain_20130417_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130417/rain_20130417_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130417/rain_20130417_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130424/rain_20130424_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130424/rain_20130424_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130424/rain_20130424_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130424/rain_20130424_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130424/rain_20130424_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130424/rain_20130424_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130424/rain_20130424_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130424/rain_20130424_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130424/rain_20130424_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130424/rain_20130424_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130424/rain_20130424_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130501/rain_20130501_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130501/rain_20130501_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130501/rain_20130501_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130501/rain_20130501_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130501/rain_20130501_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130501/rain_20130501_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130501/rain_20130501_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130501/rain_20130501_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130501/rain_20130501_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130501/rain_20130501_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130501/rain_20130501_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130508/rain_20130508_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130508/rain_20130508_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130508/rain_20130508_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130508/rain_20130508_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130508/rain_20130508_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130508/rain_20130508_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130508/rain_20130508_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130508/rain_20130508_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130508/rain_20130508_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130508/rain_20130508_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130508/rain_20130508_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130515/rain_20130515_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130515/rain_20130515_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130515/rain_20130515_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130515/rain_20130515_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130515/rain_20130515_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130515/rain_20130515_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130515/rain_20130515_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130515/rain_20130515_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130515/rain_20130515_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130515/rain_20130515_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2013/20130515/rain_20130515_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140423/rain_20140423_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140423/rain_20140423_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140423/rain_20140423_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140423/rain_20140423_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140423/rain_20140423_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140423/rain_20140423_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140423/rain_20140423_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140423/rain_20140423_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140423/rain_20140423_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140423/rain_20140423_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140423/rain_20140423_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140430/rain_20140430_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140430/rain_20140430_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140430/rain_20140430_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140430/rain_20140430_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140430/rain_20140430_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140430/rain_20140430_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140430/rain_20140430_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140430/rain_20140430_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140430/rain_20140430_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140430/rain_20140430_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140430/rain_20140430_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140507/rain_20140507_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140507/rain_20140507_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140507/rain_20140507_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140507/rain_20140507_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140507/rain_20140507_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140507/rain_20140507_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140507/rain_20140507_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140507/rain_20140507_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140507/rain_20140507_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140507/rain_20140507_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140507/rain_20140507_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140514/rain_20140514_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140514/rain_20140514_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140514/rain_20140514_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140514/rain_20140514_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140514/rain_20140514_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140514/rain_20140514_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140514/rain_20140514_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140514/rain_20140514_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140514/rain_20140514_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140514/rain_20140514_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2014/20140514/rain_20140514_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150422/rain_20150422_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150422/rain_20150422_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150422/rain_20150422_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150422/rain_20150422_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150422/rain_20150422_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150422/rain_20150422_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150422/rain_20150422_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150422/rain_20150422_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150422/rain_20150422_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150422/rain_20150422_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150422/rain_20150422_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150429/rain_20150429_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150429/rain_20150429_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150429/rain_20150429_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150429/rain_20150429_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150429/rain_20150429_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150429/rain_20150429_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150429/rain_20150429_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150429/rain_20150429_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150429/rain_20150429_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150429/rain_20150429_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150429/rain_20150429_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150506/rain_20150506_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150506/rain_20150506_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150506/rain_20150506_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150506/rain_20150506_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150506/rain_20150506_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150506/rain_20150506_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150506/rain_20150506_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150506/rain_20150506_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150506/rain_20150506_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150506/rain_20150506_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150506/rain_20150506_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150513/rain_20150513_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150513/rain_20150513_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150513/rain_20150513_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150513/rain_20150513_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150513/rain_20150513_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150513/rain_20150513_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150513/rain_20150513_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150513/rain_20150513_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150513/rain_20150513_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150513/rain_20150513_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2015/20150513/rain_20150513_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160420/rain_20160420_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160420/rain_20160420_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160420/rain_20160420_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160420/rain_20160420_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160420/rain_20160420_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160420/rain_20160420_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160420/rain_20160420_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160420/rain_20160420_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160420/rain_20160420_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160420/rain_20160420_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160420/rain_20160420_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160427/rain_20160427_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160427/rain_20160427_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160427/rain_20160427_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160427/rain_20160427_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160427/rain_20160427_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160427/rain_20160427_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160427/rain_20160427_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160427/rain_20160427_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160427/rain_20160427_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160427/rain_20160427_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160427/rain_20160427_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160504/rain_20160504_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160504/rain_20160504_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160504/rain_20160504_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160504/rain_20160504_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160504/rain_20160504_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160504/rain_20160504_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160504/rain_20160504_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160504/rain_20160504_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160504/rain_20160504_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160504/rain_20160504_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160504/rain_20160504_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160511/rain_20160511_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160511/rain_20160511_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160511/rain_20160511_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160511/rain_20160511_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160511/rain_20160511_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160511/rain_20160511_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160511/rain_20160511_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160511/rain_20160511_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160511/rain_20160511_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160511/rain_20160511_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2016/20160511/rain_20160511_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170419/rain_20170419_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170419/rain_20170419_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170419/rain_20170419_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170419/rain_20170419_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170419/rain_20170419_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170419/rain_20170419_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170419/rain_20170419_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170419/rain_20170419_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170419/rain_20170419_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170419/rain_20170419_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170419/rain_20170419_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170426/rain_20170426_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170426/rain_20170426_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170426/rain_20170426_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170426/rain_20170426_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170426/rain_20170426_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170426/rain_20170426_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170426/rain_20170426_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170426/rain_20170426_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170426/rain_20170426_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170426/rain_20170426_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170426/rain_20170426_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170503/rain_20170503_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170503/rain_20170503_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170503/rain_20170503_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170503/rain_20170503_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170503/rain_20170503_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170503/rain_20170503_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170503/rain_20170503_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170503/rain_20170503_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170503/rain_20170503_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170503/rain_20170503_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170503/rain_20170503_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170510/rain_20170510_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170510/rain_20170510_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170510/rain_20170510_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170510/rain_20170510_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170510/rain_20170510_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170510/rain_20170510_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170510/rain_20170510_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170510/rain_20170510_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170510/rain_20170510_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170510/rain_20170510_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2017/20170510/rain_20170510_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180418/rain_20180418_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180418/rain_20180418_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180418/rain_20180418_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180418/rain_20180418_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180418/rain_20180418_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180418/rain_20180418_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180418/rain_20180418_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180418/rain_20180418_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180418/rain_20180418_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180418/rain_20180418_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180418/rain_20180418_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180425/rain_20180425_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180425/rain_20180425_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180425/rain_20180425_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180425/rain_20180425_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180425/rain_20180425_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180425/rain_20180425_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180425/rain_20180425_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180425/rain_20180425_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180425/rain_20180425_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180425/rain_20180425_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180425/rain_20180425_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180502/rain_20180502_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180502/rain_20180502_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180502/rain_20180502_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180502/rain_20180502_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180502/rain_20180502_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180502/rain_20180502_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180502/rain_20180502_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180502/rain_20180502_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180502/rain_20180502_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180502/rain_20180502_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180502/rain_20180502_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180509/rain_20180509_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180509/rain_20180509_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180509/rain_20180509_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180509/rain_20180509_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180509/rain_20180509_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180509/rain_20180509_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180509/rain_20180509_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180509/rain_20180509_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180509/rain_20180509_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180509/rain_20180509_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180509/rain_20180509_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180516/rain_20180516_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180516/rain_20180516_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180516/rain_20180516_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180516/rain_20180516_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180516/rain_20180516_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180516/rain_20180516_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180516/rain_20180516_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180516/rain_20180516_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180516/rain_20180516_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180516/rain_20180516_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2018/20180516/rain_20180516_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190417/rain_20190417_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190417/rain_20190417_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190417/rain_20190417_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190417/rain_20190417_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190417/rain_20190417_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190417/rain_20190417_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190417/rain_20190417_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190417/rain_20190417_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190417/rain_20190417_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190417/rain_20190417_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190417/rain_20190417_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190424/rain_20190424_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190424/rain_20190424_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190424/rain_20190424_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190424/rain_20190424_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190424/rain_20190424_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190424/rain_20190424_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190424/rain_20190424_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190424/rain_20190424_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190424/rain_20190424_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190424/rain_20190424_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190424/rain_20190424_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190501/rain_20190501_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190501/rain_20190501_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190501/rain_20190501_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190501/rain_20190501_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190501/rain_20190501_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190501/rain_20190501_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190501/rain_20190501_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190501/rain_20190501_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190501/rain_20190501_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190501/rain_20190501_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190501/rain_20190501_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190508/rain_20190508_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190508/rain_20190508_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190508/rain_20190508_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190508/rain_20190508_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190508/rain_20190508_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190508/rain_20190508_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190508/rain_20190508_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190508/rain_20190508_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190508/rain_20190508_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190508/rain_20190508_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190508/rain_20190508_p10.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190515/rain_20190515_c00.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190515/rain_20190515_p01.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190515/rain_20190515_p02.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190515/rain_20190515_p03.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190515/rain_20190515_p04.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190515/rain_20190515_p05.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190515/rain_20190515_p06.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190515/rain_20190515_p07.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190515/rain_20190515_p08.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190515/rain_20190515_p09.nc
+Extrayendo datos del archivo:
+sissa-forecast-database/subseasonal/GEFSv12/rain/2019/20190515/rain_20190515_p10.nc
+</pre></div></div>
+</div>
+<p>Repetimos para la base de datos observada</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Obtenemos los datos de ERA5
+fs = s3fs.S3FileSystem(anon=True)
+BUCKET_NAME = &#39;sissa-forecast-database&#39;
+tforecast = &#39;ERA5&#39;
+modelo = &#39;ERA5&#39;
+list_df = []
+PATH = tforecast + &#39;/&#39; + variable
+for i in np.arange(2010, 2020, 1):
+    awsfile = fs.ls(&#39;s3://&#39; + BUCKET_NAME + &#39;/&#39; + PATH + &#39;/&#39; + str(i) + &#39;.nc&#39;)
+    with fs.open(awsfile[0]) as f:
+        if not os.path.isfile(&#39;./tmp/era5_&#39; + variable + &#39;_&#39; + str(i) + &#39;.nc4&#39;):
+            era = xr.open_dataset(f)
+            era = era.sel(latitude=lat, longitude=lon, method=&#39;nearest&#39;)
+            era.to_netcdf(&#39;./tmp/era5_&#39; + variable + &#39;_&#39; + str(i) + &#39;.nc4&#39;)
+        f.close()
+</pre></div>
+</div>
+</div>
+<p>Abrimos los datos observados y selecciono la segunda semana a patir de los miercoles alrededor de la fecha de interes para los años de estudio</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ds_era = xr.open_mfdataset(&#39;./tmp/era5_&#39; + variable + &#39;*.nc4&#39;, engine=&#39;netcdf4&#39;, combine=&#39;nested&#39;, concat_dim=&#39;time&#39;)
+print(ds_era)
+ds_era = ds_era.compute()
+for i in np.arange(2010, 2020, 1):
+    loop_date = ref_date.replace(year=i) - timedelta(days=15)
+    while loop_date &lt; (ref_date.replace(year=i) + timedelta(days=15)):
+        if loop_date.weekday() == 2:
+            if not os.path.isfile(&#39;./tmp/&#39; + variable + &#39;_era5_&#39; + loop_date.strftime(&#39;%Y%m%d&#39;) + &#39;.nc4&#39;):
+                era = ds_era.sel(time= slice(loop_date + timedelta(days=8), loop_date + timedelta(days=14)))
+                era[&#39;S&#39;] = loop_date
+                era[&#39;time&#39;] = era[&#39;time&#39;] - era[&#39;S&#39;]
+                era.to_netcdf(&#39;./tmp/&#39; + variable + &#39;_era5_&#39; + loop_date.strftime(&#39;%Y%m%d&#39;) + &#39;.nc4&#39;)
+        loop_date += timedelta(days=1)
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.Dataset&gt;
+Dimensions:    (time: 3652)
+Coordinates:
+  * time       (time) datetime64[ns] 2010-01-01 2010-01-02 ... 2019-12-31
+    latitude   float32 -29.25
+    longitude  float32 -58.0
+Data variables:
+    rain       (time) float64 dask.array&lt;chunksize=(365,), meta=np.ndarray&gt;
+</pre></div></div>
+</div>
+<p>Selecciono los datos corregidos y sin corregir del modelo. Vamos a hacerlo de tal manera de que la información quede bien organizada en función de la fecha y la cantidad de miembros del ensamble</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>list_ds = []
+for i in np.arange(2010, 2020, 1):
+    loop_date = ref_date.replace(year=i) - timedelta(days=15)
+    while loop_date &lt; (ref_date.replace(year=i) + timedelta(days=15)):
+        if loop_date.weekday() == 2:
+            archivos = glob.glob(&#39;./tmp/corr_&#39; + variable + &#39;*&#39; +  loop_date.strftime(&#39;%Y%m%d&#39;) + &#39;*.nc4&#39;)
+            # Abre cada archivo con preprocesamiento y agrégalo a una lista de datasets
+            datasets = [preprocess_ds(xr.open_dataset(archivo)) for archivo in archivos]
+            datasets = xr.concat(datasets, dim=&#39;M&#39;)
+            list_ds.append(datasets)
+        loop_date += timedelta(days=1)
+
+ds_corr = xr.concat(list_ds, dim=&#39;S&#39;)
+print(ds_corr)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.Dataset&gt;
+Dimensions:   (leadtime: 34, M: 11, S: 44)
+Coordinates:
+  * leadtime  (leadtime) timedelta64[ns] 0 days 1 days ... 32 days 33 days
+    lat       float64 -29.25
+    lon       float64 -58.0
+  * M         (M) int32 0 1 10 2 3 4 5 6 7 8 9
+  * S         (S) datetime64[ns] 2010-04-21 2010-04-28 ... 2019-05-08 2019-05-15
+Data variables:
+    rain      (S, M, leadtime) float64 5.942 0.0 0.0 0.0 ... 0.0 0.0 195.1 167.7
+</pre></div></div>
+</div>
+<p>Selecciono la semana 2</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># selecciono semana 2 (8-14 dias)
+ds_corr_w2 = ds_corr.sel(leadtime=slice(np.timedelta64(8, &#39;D&#39;), np.timedelta64(14, &#39;D&#39;)))
+print(ds_corr_w2)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.Dataset&gt;
+Dimensions:   (leadtime: 7, M: 11, S: 44)
+Coordinates:
+  * leadtime  (leadtime) timedelta64[ns] 8 days 9 days ... 13 days 14 days
+    lat       float64 -29.25
+    lon       float64 -58.0
+  * M         (M) int32 0 1 10 2 3 4 5 6 7 8 9
+  * S         (S) datetime64[ns] 2010-04-21 2010-04-28 ... 2019-05-08 2019-05-15
+Data variables:
+    rain      (S, M, leadtime) float64 0.0 0.0 0.0 0.0 ... 0.0 20.23 153.9 30.97
+</pre></div></div>
+</div>
+<p>Repito para los datos corregidos</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>list_ds = []
+for i in np.arange(2010, 2020, 1):
+    loop_date = ref_date.replace(year=i) - timedelta(days=15)
+    while loop_date &lt; (ref_date.replace(year=i) + timedelta(days=15)):
+        if loop_date.weekday() == 2:
+            archivos = glob.glob(&#39;./tmp/uncal_&#39; + variable + &#39;*&#39; +  loop_date.strftime(&#39;%Y%m%d&#39;) + &#39;*.nc4&#39;)
+            # Abre cada archivo con preprocesamiento y agrégalo a una lista de datasets
+            datasets = [preprocess_ds(xr.open_dataset(archivo)) for archivo in archivos]
+            datasets = xr.concat(datasets, dim=&#39;M&#39;)
+            list_ds.append(datasets)
+        loop_date += timedelta(days=1)
+
+ds_uncal = xr.concat(list_ds, dim=&#39;S&#39;)
+print(ds_uncal)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.Dataset&gt;
+Dimensions:   (leadtime: 34, M: 11, S: 44)
+Coordinates:
+  * leadtime  (leadtime) timedelta64[ns] 0 days 1 days ... 32 days 33 days
+    lat       float64 -29.25
+    lon       float64 -58.0
+  * M         (M) int32 0 1 10 2 3 4 5 6 7 8 9
+  * S         (S) datetime64[ns] 2010-04-21 2010-04-28 ... 2019-05-08 2019-05-15
+Data variables:
+    rain      (S, M, leadtime) float64 4.0 0.3 0.0 0.0 ... 0.6999 2.55 22.4 20.5
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># selecciono semana 2 (8-14 dias)
+ds_uncal_w2 = ds_uncal.sel(leadtime=slice(np.timedelta64(8, &#39;D&#39;), np.timedelta64(14, &#39;D&#39;)))
+print(ds_uncal_w2)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.Dataset&gt;
+Dimensions:   (leadtime: 7, M: 11, S: 44)
+Coordinates:
+  * leadtime  (leadtime) timedelta64[ns] 8 days 9 days ... 13 days 14 days
+    lat       float64 -29.25
+    lon       float64 -58.0
+  * M         (M) int32 0 1 10 2 3 4 5 6 7 8 9
+  * S         (S) datetime64[ns] 2010-04-21 2010-04-28 ... 2019-05-08 2019-05-15
+Data variables:
+    rain      (S, M, leadtime) float64 0.0 0.0 0.0 0.0 ... 0.0 8.799 22.7 10.8
+</pre></div></div>
+</div>
+<p>Abrimos los datos observados</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ds_era = xr.open_mfdataset(&#39;./tmp/&#39; + variable + &#39;_era5_&#39; + &#39;*.nc4&#39;, engine=&#39;netcdf4&#39;, combine=&#39;nested&#39;, concat_dim=[&#39;S&#39;])
+print(ds_era)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.Dataset&gt;
+Dimensions:    (time: 7, S: 44)
+Coordinates:
+  * time       (time) timedelta64[ns] 8 days 9 days 10 days ... 13 days 14 days
+    latitude   float32 -29.25
+    longitude  float32 -58.0
+  * S          (S) datetime64[ns] 2010-04-21 2010-04-28 ... 2019-05-15
+Data variables:
+    rain       (S, time) float64 dask.array&lt;chunksize=(1, 7), meta=np.ndarray&gt;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Ajuste de los datos a una distribución normal
+aux_uncal =ds_uncal_w2[variable].values.flat
+aux_corr =ds_corr_w2[variable].values.flat
+aux_era = ds_era[variable].values.flat[~np.isnan(ds_era[variable].values.flat)]
+
+bins = np.arange(0, 60, 5)
+
+plt.hist(aux_uncal, bins, density=True, histtype=&#39;step&#39;, color=&#39;r&#39;, alpha=0.5, label=&#39;GEFS No-corregida&#39;, linewidth=1.5)
+plt.hist(aux_corr, bins, density=True, histtype=&#39;step&#39;, color=&#39;b&#39;, alpha=0.5, label=&#39;GEFS Corregida&#39;, linewidth=1.5)
+plt.hist(aux_era, bins, density=True, histtype=&#39;step&#39;, color=&#39;k&#39;, alpha=0.5, label=&#39;ERA5&#39;, linewidth=1.5)
+
+
+plt.xlabel(variable)
+plt.ylabel(&#39;Densidad de probabilidad&#39;)
+plt.title(&#39;Ajuste de datos a una distribución normal&#39;)
+plt.legend()
+plt.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/SISSA_database_tutoriales_python_Tutorial_PDF_CDF_rain_daily_23_0.png" src="../../../_images/SISSA_database_tutoriales_python_Tutorial_PDF_CDF_rain_daily_23_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
+import matplotlib.pyplot as plt
+
+x_ordenados1, cdf1 = calcular_cdf(aux_corr)
+x_ordenados2, cdf2 = calcular_cdf(aux_uncal)
+x_ordenados3, cdf3 = calcular_cdf(aux_era)
+
+# Plotear la CDF
+plt.plot(x_ordenados1, cdf1, &#39;b&#39;, label=&#39;Corregidos&#39;)
+plt.plot(x_ordenados2, cdf2, &#39;r&#39;, label=&#39;Sin corregir&#39;)
+plt.plot(x_ordenados3, cdf3, &#39;k&#39;, label=&#39;ERA5&#39;)
+plt.xlabel(variable)
+plt.ylabel(&#39;Probabilidad acumulada&#39;)
+plt.title(&#39;Función de Distribución Acumulativa (CDF)&#39;)
+plt.legend()
+plt.grid(True)
+plt.show()
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/SISSA_database_tutoriales_python_Tutorial_PDF_CDF_rain_daily_24_0.png" src="../../../_images/SISSA_database_tutoriales_python_Tutorial_PDF_CDF_rain_daily_24_0.png" />
+</div>
+</div>
+</section>
+<section id="Analisis-de-lluvia-acumulada">
+<h2>Analisis de lluvia acumulada<a class="headerlink" href="#Analisis-de-lluvia-acumulada" title="Enlace permanente a este encabezado"></a></h2>
+<p>Ahora miramos la evolución de la lluvia acumulada para el segundo miercoles de mayo del registro. Vamos a ver cómo seleccionar los pronosticos inicializados esa segunda semana</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#seleccionamos el me de mayo
+ds_corr_w2 = ds_corr_w2.sum(&#39;leadtime&#39;, skipna=True).isel(S= ds_uncal_w2.S.dt.month==5)
+ds_uncal_w2 = ds_uncal_w2.sum(&#39;leadtime&#39;, skipna=True).isel(S= ds_uncal_w2.S.dt.month==5)
+ds_era = ds_era.sum(&#39;time&#39;, skipna=True).isel(S= ds_era.S.dt.month==5)
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(ds_corr_w2, ds_uncal_w2, ds_era)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;xarray.Dataset&gt;
+Dimensions:  (M: 11, S: 24)
+Coordinates:
+    lat      float64 -29.25
+    lon      float64 -58.0
+  * M        (M) int32 0 1 10 2 3 4 5 6 7 8 9
+  * S        (S) datetime64[ns] 2010-05-05 2010-05-12 ... 2019-05-08 2019-05-15
+Data variables:
+    rain     (S, M) float64 0.0 14.01 0.0 30.04 0.0 ... 262.7 103.3 374.8 205.1 &lt;xarray.Dataset&gt;
+Dimensions:  (M: 11, S: 24)
+Coordinates:
+    lat      float64 -29.25
+    lon      float64 -58.0
+  * M        (M) int32 0 1 10 2 3 4 5 6 7 8 9
+  * S        (S) datetime64[ns] 2010-05-05 2010-05-12 ... 2019-05-08 2019-05-15
+Data variables:
+    rain     (S, M) float64 0.6497 8.999 2.301 16.05 ... 54.34 41.24 48.4 42.29 &lt;xarray.Dataset&gt;
+Dimensions:    (S: 24)
+Coordinates:
+    latitude   float32 -29.25
+    longitude  float32 -58.0
+  * S          (S) datetime64[ns] 2010-05-05 2010-05-12 ... 2019-05-15
+Data variables:
+    rain       (S) float64 dask.array&lt;chunksize=(1,), meta=np.ndarray&gt;
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Selecciona el segundo miércoles de cada mes
+ds_corr_w2_smier = ds_corr_w2.groupby(&#39;S.year&#39;).apply(get_second_data)
+ds_uncal_w2_smier = ds_uncal_w2.groupby(&#39;S.year&#39;).apply(get_second_data)
+ds_era_w2_smier = ds_era.groupby(&#39;S.year&#39;).apply(get_second_data)
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = plt.figure()
+ds_uncal_w2_smier[variable].plot.scatter(x=&#39;year&#39;,color=&#39;gray&#39;, alpha=0.5, label=&#39;sin corregir&#39;)
+ds_era_w2_smier[variable].plot.scatter(x=&#39;year&#39;, color=&#39;k&#39;, label=&#39;ERA 5&#39;)
+plt.axis([2009, 2020, 0, 200])
+plt.legend()
+plt.savefig(variable + &#39;_sin_corregir.jpg&#39;, dpi=200)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/SISSA_database_tutoriales_python_Tutorial_PDF_CDF_rain_daily_29_0.png" src="../../../_images/SISSA_database_tutoriales_python_Tutorial_PDF_CDF_rain_daily_29_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>fig = plt.figure()
+ds_corr_w2_smier[variable].plot.scatter(x=&#39;year&#39;, color=&#39;orange&#39;, alpha=0.5, label=&#39;corregido&#39;)
+ds_era_w2_smier[variable].plot.scatter(x=&#39;year&#39;, color=&#39;k&#39;, label=&#39;ERA 5&#39;)
+plt.axis([2009, 2020, 0, 200])
+plt.legend()
+plt.savefig(variable + &#39;_corregido.jpg&#39;, dpi=200)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/SISSA_database_tutoriales_python_Tutorial_PDF_CDF_rain_daily_30_0.png" src="../../../_images/SISSA_database_tutoriales_python_Tutorial_PDF_CDF_rain_daily_30_0.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="../Tutorial_online_lista_archivos/" class="btn btn-neutral float-left" title="¿Como trabajar con multiples archivos en línea usando python?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../Tutorial_PDF_CDF_temperatura_daily/" class="btn btn-neutral float-right" title="Ejercicio 2: Distribucion Tmedia diaria" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor Centro Regional sobre el clima para el Sur de América del Sur.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
